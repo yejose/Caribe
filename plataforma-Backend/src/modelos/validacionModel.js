@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const cedulaModel = new Schema({
+const cedulaSchema = new Schema({
   cedula: {
     type: "string",
     required: true,
   },
 });
 
-module.exports = mongoose.model("cedulaRegistro", cedulaModel);
+const validacionModel = mongoose.model("cedulaRegistro", cedulaSchema);
+exports.validacionModel = validacionModel;
