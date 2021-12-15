@@ -11,8 +11,11 @@ const { gestionCedulaApi } = require("./rutas/ServiciosGestion/gestionCedulaApi"
 const { gestionServicioApi } = require("./rutas/ServiciosGestion/gestionServicioApi");
 const { usuariosGestionApi } = require("./rutas/usuariosGestion/usuariosGestionApi");
 const { eliminarApi } = require("./rutas/usuariosGestion/eliminarApi");
-const { parametrizacionApi} = require("./rutas/Parametrizacion/parametrizacionApi")
+const { parametrizacionApi } = require("./rutas/Parametrizacion/parametrizacionApi");
+const { gInspeccionApi } = require("./rutas/Inspeccion/gInspeccionApi")
+const { updateServicioApi } = require("./rutas/ServiciosGestion/updateServicioApi");
 require("dotenv").config();
+
 app.use(cors()); //Middleware cors
 app.use(express.json()); //Middleware json()
 
@@ -31,10 +34,11 @@ app.use("", gestionServicioApi);
 app.use("", usuariosGestionApi);
 app.use("", eliminarApi);
 app.use("", parametrizacionApi);
+app.use("", gInspeccionApi);
+app.use("", updateServicioApi);
 
 //conectarnos a mongoDb
 mongoose
-  // .connect("mongodb://localhost:27017/caribe")
   .connect(process.env.SERVER_DB_URL)
   .then((res) => console.log("conectado a base de datos Caribe"))
   .catch((err) => console.log("error:", err));

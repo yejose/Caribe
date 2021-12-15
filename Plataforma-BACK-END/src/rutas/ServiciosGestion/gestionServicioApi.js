@@ -1,8 +1,10 @@
 const { Router } = require("express");
 const { registroModel } = require("../../modelos/registroModel");
+const { clienteAuto } = require("../../autorizacion/clienteAuto");
 const gestionServicioApi = Router();
 
-gestionServicioApi.post("/gestionServicio", async function(req, res){
+
+gestionServicioApi.post("/gestionServicio",  async function(req, res){
     try {
         const data = req.body;
         const cedula = data.cedula;

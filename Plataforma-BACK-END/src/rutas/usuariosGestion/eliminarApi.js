@@ -1,6 +1,7 @@
 const {Router} = require("express");
 const eliminarApi = Router();
 const { usuariosModel } = require("../../modelos/usuariosModel");
+const { clienteAuto } = require("../../autorizacion/clienteAuto");
 
 eliminarApi.post("/eliminar", async function(req, res){
     console.log("entró a eliminar")

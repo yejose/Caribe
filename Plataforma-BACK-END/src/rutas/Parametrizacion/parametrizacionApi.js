@@ -1,8 +1,10 @@
 const { Router } = require("express");
 const { parametrizacionModel } = require("../../modelos/parametrizacionModel");
 const parametrizacionApi = Router();
+const { clienteAuto } = require("../../autorizacion/clienteAuto");
 
 parametrizacionApi.post("/parametrizacion", async function (req, res) {
+
   console.log("entró a parametrizacion");
   try {
     const data = req.body;

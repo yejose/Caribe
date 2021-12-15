@@ -1,6 +1,7 @@
 const {Router} = require("express");
 const { usuariosModel } = require("../../modelos/usuariosModel");
 const usuariosApi = Router();
+const { clienteAuto } = require("../../autorizacion/clienteAuto");
 
 usuariosApi.post("/usuariosBusqueda", async function(req, res){
     console.log("--------------------------")

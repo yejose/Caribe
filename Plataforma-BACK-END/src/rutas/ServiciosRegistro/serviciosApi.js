@@ -2,9 +2,10 @@ const {Router} = require("express");
 const { registroModel } = require("../../modelos/registroModel");
 const { usuariosModel } = require("../../modelos/usuariosModel");
 const serviciosApi = Router();
+const { clienteAuto } = require("../../autorizacion/clienteAuto");
 
 
-serviciosApi.post("/servicioRegistro", async function(req, res){
+serviciosApi.post("/servicioRegistro",  async function(req, res){
     try{
         console.log("------------------")
         console.log("SERVICIO REGISTRO")
